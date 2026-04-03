@@ -1,0 +1,17 @@
+{
+  "enabledPlugins": {
+    "code-review@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "serena@claude-plugins-official": true,
+    "supabase@claude-plugins-official": true,
+    "atlassian@claude-plugins-official": true,
+    "telegram@claude-plugins-official": true,
+    "slack@claude-plugins-official": true,
+    "greptile@claude-plugins-official": true,
+    "hookify@claude-plugins-official": true
+  }
+}
