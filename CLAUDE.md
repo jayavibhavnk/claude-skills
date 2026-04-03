@@ -4,12 +4,12 @@ A comprehensive skill library for Claude Code, built from the best plugins and d
 
 ## Overview
 
-This repository contains a curated collection of skills that extend Claude Code's capabilities across:
+This repository contains a curated collection of 45+ skills that extend Claude Code's capabilities across:
 - **Cloud & Deployment** - Vercel, serverless functions, edge computing
-- **AI/ML** - Hugging Face, AI SDK, embeddings, agents
+- **AI/ML** - Hugging Face, AI SDK, embeddings, agents, RAG
 - **Development** - Testing, debugging, refactoring, code review
 - **Collaboration** - GitHub, GitLab, Slack, Atlassian
-- **Data** - Supabase, data pipelines, ETL
+- **Data** - Supabase, data pipelines, PostgreSQL
 - **Infrastructure** - Docker, MCP servers, security
 - **Productivity** - Architecture, research, documentation
 
@@ -24,55 +24,66 @@ cd claude-skills
 ls skills/
 ```
 
-## Skills Index
+## Skills Index (45 Skills)
 
-### Cloud & Deployment
+### Cloud & Deployment (4)
 - `vercel-deploy` - Deploy to Vercel with CI/CD pipelines
 - `vercel-functions` - Build serverless functions and edge compute
-- `vercel-storage` - Work with Vercel Blob and storage solutions
-- `vercel-ai-sdk` - Build AI-powered features with Vercel AI SDK
+- `vercel-ai-sdk` - AI SDK with modern AI Gateway patterns
+- `vercel-storage` - Vercel Blob storage solutions
 
-### AI/ML
-- `huggingface-inference` - Run inference with Hugging Face models
-- `huggingface-fine-tuning` - Fine-tune models on custom data
-- `ai-agent-patterns` - Design and implement AI agent architectures
-- `embeddings-rag` - Build RAG systems with embeddings
+### AI/ML (11)
+- `ai-gateway-patterns` - Multi-provider routing, failover, cost tracking
+- `agentic-patterns` - Multi-agent systems, tool orchestration, memory
+- `embeddings-rag` - RAG systems with vector search
+- `function-calling-ai` - Tool definitions, Zod schemas, execution
+- `streaming-ai-ui` - Real-time streaming, useChat v6 patterns
+- `huggingface-inference` - HF model inference
+- `image-generation-ai` - AI image generation with prompts
+- `speech-to-text-ai` - Whisper transcription, voice commands
+- `ai-evaluation` - Test sets, metrics, A/B testing
+- `ai-agent-patterns` - AI agent architectures
+- `real-time-collab` - WebSockets, presence, CRDTs
 
-### Development Workflow
-- `systematic-debugging` - Debug issues methodically
+### Development Workflow (8)
+- `systematic-debugging` - Scientific debugging method
 - `test-driven-development` - TDD with modern frameworks
-- `code-refactoring` - Refactor and improve existing code
-- `pr-code-review` - Review pull requests thoroughly
+- `testing-best-practices` - AAA pattern, React Testing Library
+- `code-refactoring` - SOLID principles, extract patterns
+- `pr-code-review` - Constructive feedback, checklists
+- `performance-optimization` - Core Web Vitals, bundle size
+- `error-handling` - Typed errors, retry, circuit breaker
+- `database-patterns` - Soft deletes, optimistic locking
 
-### Collaboration
-- `github-actions` - Build GitHub Actions workflows
-- `gitlab-ci` - Configure GitLab CI/CD pipelines
-- `slack-integration` - Build Slack apps and integrations
-- `atlassian-triage` - Triage Jira/Confluence issues
+### Collaboration (4)
+- `github-actions` - GitHub Actions CI/CD workflows
+- `gitlab-ci` - GitLab CI pipeline configuration
+- `slack-integration` - Slack app development, Block Kit
+- `atlassian-triage` - Jira/issue management, sprints
 
-### Data & Databases
-- `supabase-basics` - Supabase setup and patterns
-- `data-pipelines` - Build ETL/data pipelines
-- `postgres-optimization` - Optimize PostgreSQL queries
+### Data & Databases (4)
+- `supabase-basics` - PostgreSQL + Supabase
+- `postgres-optimization` - Query optimization, indexes
+- `data-pipelines` - ETL patterns, Airflow DAGs
+- `graphql-patterns` - Schema design, resolvers, DataLoader
 
-### Infrastructure
-- `mcp-server-build` - Build MCP servers
-- `docker-compose-dev` - Docker development workflows
-- `security-audit` - Security best practices audit
+### Infrastructure (6)
+- `mcp-server-build` - MCP server development
+- `docker-compose-dev` - Container development environments
+- `security-audit` - OWASP Top 10, vulnerability scanning
+- `edge-computing` - Edge middleware, @upstash/redis, geolocation
+- `workflow-orchestration` - Step functions, sagas, state machines
+- `zero-downtime-deploy` - Blue-green, canary, feature flags
 
-### Creative & Exploratory
-- `architecture-design` - Design system architectures
-- `tech-research` - Research new technologies
-- `documentation-write` - Write great documentation
-- `api-design` - Design RESTful and GraphQL APIs
-
-## Contributing
-
-1. Create a new skill directory in `skills/`
-2. Add `SKILL.md` with frontmatter and content
-3. Add `references/` directory if needed
-4. Commit with a clear message
-5. Submit a PR for review
+### Creative & Exploratory (8)
+- `architecture-design` - System design patterns
+- `tech-research` - Technology evaluation framework
+- `api-design` - REST/GraphQL best practices
+- `productivity-hacks` - Developer productivity tips
+- `observability-debug` - Logging, metrics, tracing
+- `event-driven-architecture` - Kafka, RabbitMQ, event sourcing
+- `figma-integration` - Design-to-code extraction
+- `monitoring-alerting` - Prometheus, Grafana, SLOs
 
 ## Skill Structure
 
@@ -81,16 +92,46 @@ Each skill follows this structure:
 ```
 skills/
 └── skill-name/
-    ├── SKILL.md          # Main skill file
-    └── references/       # Optional reference docs
-        ├── ref1.md
-        └── ref2.md
+    └── SKILL.md   # Main skill file with frontmatter
 ```
+
+### Frontmatter Fields
+
+```yaml
+---
+name: skill-name
+description: Brief description of what this skill covers
+metadata:
+  priority: 9        # 1-10, higher = more important
+  docs:
+    - "https://docs.url"
+  pathPatterns:
+    - "**/*.ts"     # File patterns that trigger this skill
+  bashPatterns:
+    - '\bnpm\b'     # Bash command patterns
+  promptSignals:
+    phrases:
+      - "example"
+    anyOf:
+      - "trigger"
+      - "words"
+---
+```
+
+## Contributing
+
+1. Create a new skill directory in `skills/`
+2. Add `SKILL.md` with frontmatter and content
+3. Follow the existing patterns
+4. Commit with a clear message
+5. Submit a PR for review
 
 ## Cross-Collaboration
 
-Skills can chain to each other using the `chainTo` frontmatter field.
-This allows skills to seamlessly hand off to related skills.
+Skills can chain to each other using implied dependencies:
+- Vercel skills → AI SDK skills
+- Testing skills → Code review skills
+- Architecture skills → Implementation skills
 
 ## License
 
