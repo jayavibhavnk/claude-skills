@@ -4,12 +4,13 @@ A comprehensive skill library for Claude Code, built from the best plugins and d
 
 ## Overview
 
-This repository contains a curated collection of 45+ skills that extend Claude Code's capabilities across:
+This repository contains a curated collection of 65+ skills that extend Claude Code's capabilities across:
 - **Cloud & Deployment** - Vercel, serverless functions, edge computing
 - **AI/ML** - Hugging Face, AI SDK, embeddings, agents, RAG
+- **Game Dev** - React game loops, physics, UI/UX
 - **Development** - Testing, debugging, refactoring, code review
-- **Collaboration** - GitHub, GitLab, Slack, Atlassian
-- **Data** - Supabase, data pipelines, PostgreSQL
+- **Collaboration** - GitHub, GitLab, Slack, Discord, Telegram
+- **Data** - Supabase, PostgreSQL, Prisma, data pipelines
 - **Infrastructure** - Docker, MCP servers, security
 - **Productivity** - Architecture, research, documentation
 
