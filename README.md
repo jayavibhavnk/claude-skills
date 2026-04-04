@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Claude-Code-blue?style=for-the-badge" alt="Claude Code">
-  <img src="https://img.shields.io/badge/Skills-75+-green?style=for-the-badge" alt="Skills Count">
+  <img src="https://img.shields.io/badge/Skills-82+-green?style=for-the-badge" alt="Skills Count">
   <img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge" alt="License">
 </p>
 
@@ -10,7 +10,7 @@
 
 ## Features
 
-- **75+ Production Skills** - Covering AI/ML, cloud deployment, game dev, testing, and more
+- **82+ Production Skills** - Covering AI/ML, cloud deployment, game dev, testing, and more
 - **Cross-Collaborative** - Skills reference each other for complex workflows
 - **Modern Patterns** - AI SDK v6, Next.js 14, Vercel Fluid Compute, and more
 - **Battle-Tested** - Real code patterns from production applications
@@ -59,7 +59,7 @@ cat skills/vercel-ai-sdk/SKILL.md
 | `ai-agent-patterns` | AI agent architectures, memory |
 | `real-time-collab` | WebSockets, presence, CRDTs |
 
-### Game Development (10)
+### Game Development (16)
 
 | Skill | Description |
 |-------|-------------|
@@ -73,6 +73,12 @@ cat skills/vercel-ai-sdk/SKILL.md
 | `roguelike-deckbuilder` | Poker scoring, Joker effects, run progression |
 | `turn-based-combat` | Pokemon-style battles, type effectiveness |
 | `procedural-gen` | Noise algorithms, dungeon generation |
+| `game-ui-toolkit` | React game UI components, buttons, modals |
+| `game-save-system` | LocalStorage, IndexedDB, auto-save |
+| `game-achievements` | Trophy system, leaderboards |
+| `game-shop-ui` | In-game stores, currency, purchase flow |
+| `game-quest-system` | Quest tracking, objectives, rewards |
+| `game-inventory-ui` | Item grid, equipment slots, tooltips |
 
 ### Development Workflow (12)
 
